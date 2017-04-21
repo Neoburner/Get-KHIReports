@@ -32,6 +32,7 @@ $tbCSVsave = New-Object System.Windows.Forms.TextBox
 $tbCSVsave.Location = New-Object System.Drawing.Size(7,266)
 $tbCSVsave.Width = 260
 $tbCSVsave.Height = 28
+$tbCSVsave.Text = "./KHI/CSV"
 $primaryForm.Controls.Add($tbCSVsave)
 
 $label7 = New-Object system.windows.Forms.Label
@@ -44,7 +45,7 @@ $label7.Font = "Microsoft Sans Serif,10"
 $primaryForm.controls.Add($label7)
 
 $label8 = New-Object system.windows.Forms.Label
-$label8.Text = "Location to save collected files (UNC Path)"
+$label8.Text = "Location to save collected files (change only if required)"
 $label8.AutoSize = $true
 $label8.Width = 25
 $label8.Height = 10
@@ -72,7 +73,6 @@ foreach ($server in $tbServers.Text) {
         #Write-Host $fullPathfilename
         Copy-Item $fullPathfilename -Destination $tbCSVsave.Text
         }
-      }
-
     }
+}
 Generate-Form
